@@ -1,1 +1,35 @@
-[]
+[
+ {
+  "id": 0
+ },
+ {
+  "id": 1,
+  "email": "456@yoyo.com",
+  "password": "$2b$10$jAwphli8fcuxmV.aeeZcvukxxDEASsWR9bBTX5EtAVnUuiHUUFfsK",
+  "avatar": "avatar-1606269635941.png"
+ },
+ {
+  "id": 2,
+  "email": "felix@felix.com",
+  "password": "$2b$10$39sAM.85RxeTVirITCEMVeiyU.76HnvRcQj12CQ5opAjwrWYRMCgK",
+  "avatar": "avatar-1607471653147.jpg"
+ },
+ {
+  "id": 3,
+  "email": "yoyo@yoyo.com",
+  "password": "$2b$10$BfZ08pXOiTzvNbutQm32I.2b0nHnVW84EAEmfUezz/YsCB1SOZNJC",
+  "avatar": "avatar-1607471853244.jpg"
+ },
+ {
+  "id": 4,
+  "email": "123@123.com",
+  "password": "$2b$10$2WIorxhJTif1E0JSy5RHd.aT4GaRGU.F2plbzX0Agmq9jX9lZnlHS",
+  "avatar": "avatar-1607471989786.jpg"
+ },
+ {
+  "id": 5,
+  "email": "123123@123.com",
+  "password": "$2b$10$fU/bVVbUGx3cTiIS/Gnz.OKOxw5LwSyXbTDd1KAL6F3LvOXprLuoy",
+  "avatar": "avatar-1607782719335.jpg"
+ }
+]
