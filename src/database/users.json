@@ -31,5 +31,11 @@
   "email": "123123@123.com",
   "password": "$2b$10$fU/bVVbUGx3cTiIS/Gnz.OKOxw5LwSyXbTDd1KAL6F3LvOXprLuoy",
   "avatar": "avatar-1607782719335.jpg"
+ },
+ {
+  "id": 6,
+  "email": "hola@hola.com",
+  "password": "$2b$10$.lHv.rBz/mivCiR/aeqKqOeiNgJNfJZrRI.eburN.mEuM3lwhnmD2",
+  "avatar": "avatar-1608008705052.jpg"
  }
 ]

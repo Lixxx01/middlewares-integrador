@@ -59,19 +59,31 @@ module.exports = {
         if (req.body.email == userFound.email && bcrypt.compareSync(req.body.password, userFound.password)) {
             
             req.session.userToLog = userFound;
-            res.cookie('user', userFound.id ,{ maxAge: 60000});
-            return res.render('./user/profile');
-        } else {
+            if(req.body.remember){
+                res.cookie('user', userFound.id ,{ maxAge: 60000});
+            }
+            
+        return res.redirect('/user/profile');
+
+            } else {
             return res.render('./user/user-login-form', {
                 errors: {msg: 'Email o Contraseña invalidos'}
-            });
-        }
+        })};
+            
+        
 
     },
+
     showProfile: (req, res) => {
-        return res.render('user/profile');
+        return res.render('./user/profile');
     },
     logout: (req, res) => {
+        
+        const users = allUsers();
+        const userFound = users.find((user) => (user.email == res.locals.email))
+
+        req.session.destroy();
+        res.cookie('user', userFound.id, {expires: new Date(Date.now()-1000)});
         // Do the magic
         return res.redirect('/');
     }

@@ -5,6 +5,8 @@ const { check, validationResult, body } = require('express-validator');
 
 const userController = require('../controllers/userController');
 const validator = require('../middlewares/validator');
+const authMiddleware = require('../middlewares/authMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddlewares');
 
 const multer = require('multer');
 
@@ -20,21 +22,21 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 // Muestra la vista de registro
-router.get('/register', userController.showRegister);
+router.get('/register', guestMiddleware, userController.showRegister);
 
 // Procesa la vista de registro
-router.post('/register', upload.any(), validator.register, userController.processRegister);
+router.post('/register', guestMiddleware, upload.any(), validator.register, userController.processRegister);
 
 // Muestra la vista de login
-router.get('/login', userController.showLogin);
+router.get('/login', guestMiddleware, userController.showLogin);
 
 // Procesa la vista de login
-router.post('/login', validator.login, userController.processLogin);
+router.post('/login', guestMiddleware, validator.login, userController.processLogin);
 
 // Muestra el perfil del usuario
-router.get('/profile', userController.showProfile);
+router.get('/profile', authMiddleware ,userController.showProfile);
 
 // Cierra la sesión
-router.get('/logout', userController.logout);
+router.get('/logout', authMiddleware ,userController.logout);
 
 module.exports = router;
