@@ -82,8 +82,9 @@ module.exports = {
         const users = allUsers();
         const userFound = users.find((user) => (user.email == res.locals.email))
 
-        req.session.destroy();
         res.cookie('user', userFound.id, {expires: new Date(Date.now()-1000)});
+        
+        req.session.destroy();
         // Do the magic
         return res.redirect('/');
     }

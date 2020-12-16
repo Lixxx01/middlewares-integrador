@@ -1,31 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const { check, validationResult, body } = require('express-validator');
-
 const userController = require('../controllers/userController');
 const validator = require('../middlewares/validator');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddlewares');
 
-const multer = require('multer');
-
-var storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-    cb(null, 'public/images/users')
-    },
-    filename: (req, file, cb) => {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-});
-
-var upload = multer({ storage: storage });
+const userImageUpld = require('../helpers/multerUsers');
 
 // Muestra la vista de registro
 router.get('/register', guestMiddleware, userController.showRegister);
 
 // Procesa la vista de registro
-router.post('/register', guestMiddleware, upload.any(), validator.register, userController.processRegister);
+router.post('/register', guestMiddleware, userImageUpld.any(), validator.register, userController.processRegister);
 
 // Muestra la vista de login
 router.get('/login', guestMiddleware, userController.showLogin);

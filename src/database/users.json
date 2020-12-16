@@ -37,5 +37,11 @@
   "email": "hola@hola.com",
   "password": "$2b$10$.lHv.rBz/mivCiR/aeqKqOeiNgJNfJZrRI.eburN.mEuM3lwhnmD2",
   "avatar": "avatar-1608008705052.jpg"
+ },
+ {
+  "id": 7,
+  "email": "yono@yono.com",
+  "password": "$2b$10$uStyD3mH.d7ch611.SISSeo.svG5ONgvL/TsgebOSaBrRjYvgn8VK",
+  "avatar": "avatar-1608079117072.jpg"
  }
 ]
